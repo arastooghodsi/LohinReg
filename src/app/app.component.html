@@ -1,0 +1,24 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">صفحه اصلی</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">کاربران</a>
+        <a class="nav-item nav-link" (click)="logout()">خروج</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <p>
+        <a href="https://PeymanGard.com" target="_top">فروشگاه کامیک بوک</a>
+    </p>
+    <p>
+        <a href="https://PeymanGard.com" target="_top">PeymanGard.com</a>
+    </p>
+</div>
